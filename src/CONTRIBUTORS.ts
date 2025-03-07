@@ -2591,3 +2591,16 @@ export const Jordan: Contributor = {
   github: 'jordantoine',
   discord: 'jordannonumbers',
 };
+
+export const SamuelMaverick: Contributor = {
+  nickname: 'SamuelMaverick',
+  github: 'samuelmaverick',
+  discord: 'samuel_maverick',
+  mains: [
+    {
+      name: 'Mäveríck',
+      spec: SPECS.SUBTLETY_ROGUE,
+      link: 'https://worldofwarcraft.blizzard.com/en-gb/character/eu/ragnaros/m%C3%A4ver%C3%ADck/',
+    },
+  ],
+};

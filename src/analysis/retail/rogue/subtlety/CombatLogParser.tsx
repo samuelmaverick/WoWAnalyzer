@@ -7,8 +7,6 @@ import {
   EnergyDetails,
   EnergyTracker,
   InvigoratingShadowdust,
-  Sepsis,
-  StealthAbilityFollowingSepsis,
   SpellEnergyCost,
   StealthDamageTracker,
   InstantPoison,
@@ -35,7 +33,6 @@ import TheRotten from './modules/talents/TheRotten';
 import DarkShadowContribution from './modules/talents/DarkShadow/DarkShadowContribution';
 import ShurikenStormNormalizer from './normalizers/ShurikenStormNormalizer';
 import Flagellation from 'analysis/retail/rogue/shared/talents/Flagellation';
-import InvigoratingShadowdustTalent from 'analysis/retail/rogue/subtlety/modules/talents/InvigoratingShadowdustTalent';
 
 class CombatLogParser extends CoreCombatLogParser {
   static specModules = {
@@ -82,9 +79,6 @@ class CombatLogParser extends CoreCombatLogParser {
     darkShadowContribution: DarkShadowContribution,
     theRotten: TheRotten,
     deeperDaggers: DeeperDaggers,
-    invigoratingShadowdustTalent: InvigoratingShadowdustTalent,
-    sepsis: Sepsis,
-    stealthAbilityFollowingSepsis: StealthAbilityFollowingSepsis,
     echoingReprimand: EchoingReprimand,
     flagellation: Flagellation,
 

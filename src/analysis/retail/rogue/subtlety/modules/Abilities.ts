@@ -55,22 +55,22 @@ class Abilities extends CoreAbilities {
         },
       },
       {
+        spell: SPELLS.SHADOW_DANCE.id,
+        category: SPELL_CATEGORY.COOLDOWNS,
+        buffSpellId: SPELLS.SHADOW_DANCE_BUFF.id,
+        cooldown: 60,
+        gcd: null,
+        castEfficiency: {
+          suggestion: true,
+          recommendedEfficiency: 0.95,
+        },
+        enabled: true,
+      },
+      {
         spell: SPELLS.SHURIKEN_TOSS.id,
         category: SPELL_CATEGORY.ROTATIONAL,
         gcd: {
           static: 1000,
-        },
-      },
-      {
-        spell: SPELLS.SYMBOLS_OF_DEATH.id,
-        category: SPELL_CATEGORY.ROTATIONAL,
-        buffSpellId: SPELLS.SYMBOLS_OF_DEATH.id,
-        cooldown: 30,
-        castEfficiency: {
-          suggestion: true,
-          recommendedEfficiency: 0.95,
-          extraSuggestion:
-            'This is the most important rotational ability, try to always use it on cooldown.',
         },
       },
       // Rotational AOE
@@ -80,11 +80,6 @@ class Abilities extends CoreAbilities {
         gcd: {
           static: 1000,
         },
-      },
-      {
-        spell: SPELLS.SHURIKEN_STORM_CP.id,
-        category: SPELL_CATEGORY.ROTATIONAL_AOE,
-        gcd: null,
       },
       // Cooldowns
       {
@@ -98,31 +93,6 @@ class Abilities extends CoreAbilities {
         castEfficiency: {
           suggestion: true,
           extraSuggestion: 'In most cases should be used on cooldown.',
-        },
-      },
-      {
-        spell: TALENTS.SEPSIS_TALENT.id,
-        category: SPELL_CATEGORY.ROTATIONAL,
-        enabled: combatant.hasTalent(TALENTS.SEPSIS_TALENT),
-        cooldown: 90,
-        gcd: {
-          base: 1000,
-        },
-        castEfficiency: {
-          suggestion: true,
-        },
-      },
-      {
-        spell: SPELLS.SHADOW_DANCE.id,
-        category: SPELL_CATEGORY.COOLDOWNS,
-        buffSpellId: SPELLS.SHADOW_DANCE_BUFF.id,
-        cooldown: 60,
-        charges: 1 + (combatant.hasTalent(TALENTS.SHADOW_DANCE_TALENT) ? 1 : 0),
-        gcd: null,
-        castEfficiency: {
-          suggestion: true,
-          recommendedEfficiency: 0.95,
-          extraSuggestion: 'Use Shadow Dance before it reaches maximum charges.',
         },
       },
       {
@@ -147,6 +117,21 @@ class Abilities extends CoreAbilities {
           suggestion: true,
         },
         enabled: combatant.hasTalent(TALENTS.SECRET_TECHNIQUE_TALENT),
+      },
+      {
+        spell: SPELLS.SYMBOLS_OF_DEATH.id,
+        category: SPELL_CATEGORY.COOLDOWNS,
+        buffSpellId: SPELLS.SYMBOLS_OF_DEATH.id,
+        cooldown: 30,
+        gcd: {
+          static: 1000,
+        },
+        castEfficiency: {
+          suggestion: true,
+          recommendedEfficiency: 0.95,
+          extraSuggestion:
+            'This is the most important rotational ability, try to always use it on cooldown.',
+        },
       },
       {
         spell: TALENTS.SHURIKEN_TORNADO_TALENT.id,
@@ -203,7 +188,6 @@ class Abilities extends CoreAbilities {
         spell: SPELLS.SHADOW_STEP.id,
         category: SPELL_CATEGORY.UTILITY,
         cooldown: 30,
-        charges: combatant.hasTalent(TALENTS.SHADOWSTEP_TALENT) ? 2 : 1,
         gcd: null,
       },
       {
