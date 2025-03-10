@@ -6,14 +6,13 @@ import {
   EnergyCapTracker,
   EnergyDetails,
   EnergyTracker,
-  InvigoratingShadowdust,
   SpellEnergyCost,
   StealthDamageTracker,
   InstantPoison,
 } from 'analysis/retail/rogue/shared';
 import CoreCombatLogParser from 'parser/core/CombatLogParser';
 import ArcaneTorrent from 'parser/shared/modules/racials/bloodelf/ArcaneTorrent';
-
+import InvigoratingShadowdust from 'analysis/retail/rogue/shared/shadowlands/legendaries/InvigoratingShadowdust';
 import Abilities from './modules/Abilities';
 import BlackPowder from './modules/core/BlackPowder';
 import CastsInShadowDance from './modules/core/CastsInShadowDance';
