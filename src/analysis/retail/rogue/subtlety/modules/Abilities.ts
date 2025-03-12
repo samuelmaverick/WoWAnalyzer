@@ -58,6 +58,7 @@ class Abilities extends CoreAbilities {
         spell: SPELLS.SHADOW_DANCE.id,
         category: SPELL_CATEGORY.COOLDOWNS,
         buffSpellId: SPELLS.SHADOW_DANCE_BUFF.id,
+        charges: 1 + (combatant.hasTalent(TALENTS.DOUBLE_DANCE_TALENT) ? 1 : 0),
         cooldown: 60,
         gcd: null,
         castEfficiency: {
@@ -122,6 +123,7 @@ class Abilities extends CoreAbilities {
         spell: SPELLS.SYMBOLS_OF_DEATH.id,
         category: SPELL_CATEGORY.COOLDOWNS,
         buffSpellId: SPELLS.SYMBOLS_OF_DEATH.id,
+        charges: 1 + (combatant.hasTalent(TALENTS.DEATH_PERCEPTION_TALENT) ? 2 : 0),
         cooldown: 30,
         gcd: {
           static: 1000,

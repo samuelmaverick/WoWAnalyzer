@@ -79,16 +79,6 @@ class Flagellation extends Analyzer {
     };
   }
 
-  get dps() {
-    if (this.casts === 0) {
-      return 0;
-    }
-
-    const activeTime = this.casts * 12;
-
-    return activeTime > 0 ? this.damage / activeTime : 0;
-  }
-
   get totalDamage() {
     return this.damage + this.lashDamage;
   }

@@ -12,7 +12,6 @@ import {
 } from 'analysis/retail/rogue/shared';
 import CoreCombatLogParser from 'parser/core/CombatLogParser';
 import ArcaneTorrent from 'parser/shared/modules/racials/bloodelf/ArcaneTorrent';
-import InvigoratingShadowdust from 'analysis/retail/rogue/shared/shadowlands/legendaries/InvigoratingShadowdust';
 import Abilities from './modules/Abilities';
 import BlackPowder from './modules/core/BlackPowder';
 import CastsInShadowDance from './modules/core/CastsInShadowDance';
@@ -32,6 +31,16 @@ import TheRotten from './modules/talents/TheRotten';
 import DarkShadowContribution from './modules/talents/DarkShadow/DarkShadowContribution';
 import ShurikenStormNormalizer from './normalizers/ShurikenStormNormalizer';
 import Flagellation from 'analysis/retail/rogue/shared/talents/Flagellation';
+import Guide from './Guide';
+import Shadowstrike from './modules/spells/Shadowstrike';
+import SymbolsOfDeath from './modules/spells/SymbolsOfDeath';
+import Backstab from './modules/spells/Backstab';
+import Eviscerate from './modules/spells/Eviscrate';
+import EnergyGraph from 'analysis/retail/rogue/shared/EnergyGraph';
+import BuilderUse from './modules/core/BuilderUse';
+import FinisherUse from './modules/core/FinisherUse';
+import ShadowDance from './modules/spells/ShadowDance';
+import RuptureUptime from './modules/spells/Rupture';
 
 class CombatLogParser extends CoreCombatLogParser {
   static specModules = {
@@ -39,6 +48,9 @@ class CombatLogParser extends CoreCombatLogParser {
     abilities: Abilities,
     checklist: Checklist,
     alwaysBeCasting: AlwaysBeCasting,
+    danceCooldownReduction: DeepeningShadows,
+    builderUse: BuilderUse,
+    finisherUse: FinisherUse,
 
     //Normalizers
     shurikenStormNormalizer: ShurikenStormNormalizer,
@@ -52,17 +64,19 @@ class CombatLogParser extends CoreCombatLogParser {
     energyDetails: EnergyDetails,
     energy: Energy,
     spellEnergyCost: SpellEnergyCost,
+    energyGraph: EnergyGraph,
 
     //Trackers
     symbolsDamageTracker: SymbolsDamageTracker,
     danceDamageTracker: DanceDamageTracker,
     stealthDamageTracker: StealthDamageTracker,
 
-    //Legendaries
-    invigoratingShadowdust: InvigoratingShadowdust,
-
-    //Core
-    danceCooldownReduction: DeepeningShadows,
+    //Spells
+    shadowstrike: Shadowstrike,
+    symbolsOfDeath: SymbolsOfDeath,
+    backstab: Backstab,
+    eviscerate: Eviscerate,
+    shadowDance: ShadowDance,
 
     //Casts
     symbolsOfDeathUptime: SymbolsOfDeathUptime,
@@ -72,6 +86,7 @@ class CombatLogParser extends CoreCombatLogParser {
     vanishFindWeakness: VanishFindWeakness,
     generatorFollowingVanish: GeneratorFollowingVanish,
     instantPoison: InstantPoison,
+    ruptureUptime: RuptureUptime,
 
     //Talents
     blackPowder: BlackPowder,
@@ -86,6 +101,7 @@ class CombatLogParser extends CoreCombatLogParser {
     // Racials
     arcaneTorrent: [ArcaneTorrent, { gcd: 1000 }] as const,
   };
+  static guide = Guide;
 }
 
 export default CombatLogParser;

@@ -17,7 +17,6 @@ class DarkShadowContribution extends DarkShadow {
 
   get darkShadowDamageFactor() {
     const factor = this.selectedCombatant.getTalentRank(TALENTS.DARK_SHADOW_TALENT) * 0.15;
-    console.log('Dark Shadow Damage Factor:', factor);
     return factor;
   }
 

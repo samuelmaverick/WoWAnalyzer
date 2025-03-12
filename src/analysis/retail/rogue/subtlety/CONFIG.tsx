@@ -3,6 +3,7 @@ import SPECS from 'game/SPECS';
 import CHANGELOG from './CHANGELOG';
 import { Anty, SamuelMaverick } from 'CONTRIBUTORS';
 import Config, { SupportLevel } from 'parser/Config';
+import AlertWarning from 'interface/AlertWarning';
 
 const config: Config = {
   // The people that have contributed to this spec recently. People don't have to sign up to be long-time maintainers to be included in this list. If someone built a large part of the spec or contributed something recently to that spec, they can be added to the contributors list. If someone goes MIA, they may be removed after major changes or during a new expansion.
@@ -32,6 +33,18 @@ const config: Config = {
       <br />
     </>
   ),
+  pages: {
+    overview: {
+      frontmatterType: 'guide',
+      notes: (
+        <AlertWarning>
+          This analysis is a Work in Progress. I have made some initial updates for Rupture uptime,
+          Shadow Dance usage, and Secret Technique tracking, but there is more to do. Apologies for
+          the delays, I promise I am working on it. <code>@SamuelMaverick</code>
+        </AlertWarning>
+      ),
+    },
+  },
   // A recent example report to see interesting parts of the spec. Will be shown on the homepage.
   exampleReport:
     '/report/hfNtY6RbxWZHM2cL/1-Mythic++Priory+of+the+Sacred+Flame+-+Kill+(27:44)/Quietstep/standard',

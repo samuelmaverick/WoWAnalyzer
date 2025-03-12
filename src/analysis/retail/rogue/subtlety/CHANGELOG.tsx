@@ -3,6 +3,7 @@ import { Anty, Chizu, ToppleTheNun, SamuelMaverick } from 'CONTRIBUTORS';
 import SHARED_CHANGELOG from 'analysis/retail/rogue/shared/CHANGELOG';
 
 export default [
+  change(date(2025, 3, 12), 'Added new features, such as the Guide UI for Subtlety Rogue, and performed some code refactoring.', SamuelMaverick),
   change(date(2025, 3, 9), 'Update subtlety rogue for 11.1', SamuelMaverick),
   change(date(2023, 7, 8), 'Update SpellLink usage.', ToppleTheNun),
   change(date(2022, 12, 16), 'Fix Shuriken Storm throwing errors.', ToppleTheNun),
