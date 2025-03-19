@@ -68,6 +68,8 @@ function CoreRotationSection({ modules, info }: GuideProps<typeof CombatLogParse
       {modules.shadowDance.guideSubsection}
       {modules.symbolsOfDeath.guideSubsection}
       {modules.ruptureUptime.guideSubsection}
+      {modules.flagellationAnalysis.guideSubsection}
+      {modules.shadowBlades.guideSubsection}
     </Section>
   );
 }

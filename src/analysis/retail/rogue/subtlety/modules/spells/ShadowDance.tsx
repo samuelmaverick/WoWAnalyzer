@@ -57,11 +57,7 @@ export default class ShadowDance extends Analyzer {
             <CastPerformanceSummary
               spell={SPELLS.SHADOW_DANCE}
               casts={goodCasts}
-              performance={
-                this.cooldownUses.length > 0
-                  ? this.cooldownUses[0].performance
-                  : QualitativePerformance.Fail
-              }
+              performance={QualitativePerformance.Good}
               totalCasts={totalCasts}
             />
           </div>
@@ -85,7 +81,8 @@ export default class ShadowDance extends Analyzer {
       createSpellUse({ event }, [
         this.energyPerformance(event, energyAtCast),
         this.comboPointPerformance(event, comboPointsAtCast),
-        this.buffAlignmentPerformance(event, hasSymbolsActive, energyAtCast),
+        this.buffAlignmentPerformance(event, hasSymbolsActive),
+        this.energyPerformance(event, energyAtCast),
       ]),
     );
   }
@@ -136,8 +133,9 @@ export default class ShadowDance extends Analyzer {
           </div>
         ) : (
           <div>
-            You used <SpellLink spell={SPELLS.SHADOW_DANCE} /> at {comboPointsAtCast} combo points.
-            Try to use it at **low CP or at 6+ CP for a finisher**.
+            You used <SpellLink spell={SPELLS.SHADOW_DANCE} /> at{' '}
+            <strong>{comboPointsAtCast}</strong> combo points. Try to use it at{' '}
+            <strong> 6+ CP for a finisher</strong>.
           </div>
         ),
       },
@@ -147,30 +145,27 @@ export default class ShadowDance extends Analyzer {
   private buffAlignmentPerformance(
     event: CastEvent,
     hasSymbolsActive: boolean,
-    energyAtCast: number,
   ): ChecklistUsageInfo | undefined {
-    const isGoodEnergy = energyAtCast >= 60;
-
-    let performance: QualitativePerformance;
-    if (hasSymbolsActive && isGoodEnergy) {
-      performance = QualitativePerformance.Perfect;
-    } else if (hasSymbolsActive || isGoodEnergy) {
-      performance = QualitativePerformance.Ok;
-    } else {
-      performance = QualitativePerformance.Fail;
-    }
-
     return createChecklistItem(
       'shadow_dance_alignment',
       { event },
       {
-        performance,
+
+        performance: hasSymbolsActive
+          ? QualitativePerformance.Perfect
+          : QualitativePerformance.Fail,
         summary: <div>Buff Alignment</div>,
         details: (
           <div>
-            {hasSymbolsActive ? '✔ Symbols of Death was active.' : 'Missed Symbols of Death.'}
-            <br />
-            {isGoodEnergy ? '✔ Had sufficient energy.' : 'Low energy at cast.'}
+            {hasSymbolsActive ? (
+              <>
+                <SpellLink spell={SPELLS.SYMBOLS_OF_DEATH} /> was active.
+              </>
+            ) : (
+              <>
+                Missing <SpellLink spell={SPELLS.SYMBOLS_OF_DEATH} />.
+              </>
+            )}
           </div>
         ),
       },

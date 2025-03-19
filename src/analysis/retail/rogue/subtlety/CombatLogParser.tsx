@@ -12,6 +12,7 @@ import {
 } from 'analysis/retail/rogue/shared';
 import CoreCombatLogParser from 'parser/core/CombatLogParser';
 import ArcaneTorrent from 'parser/shared/modules/racials/bloodelf/ArcaneTorrent';
+import ComboPointGraph from 'analysis/retail/rogue/shared/ComboPointGraph';
 import Abilities from './modules/Abilities';
 import BlackPowder from './modules/core/BlackPowder';
 import CastsInShadowDance from './modules/core/CastsInShadowDance';
@@ -35,12 +36,16 @@ import Guide from './Guide';
 import Shadowstrike from './modules/spells/Shadowstrike';
 import SymbolsOfDeath from './modules/spells/SymbolsOfDeath';
 import Backstab from './modules/spells/Backstab';
-import Eviscerate from './modules/spells/Eviscrate';
+import Eviscerate from './modules/spells/Eviscerate';
 import EnergyGraph from 'analysis/retail/rogue/shared/EnergyGraph';
 import BuilderUse from './modules/core/BuilderUse';
 import FinisherUse from './modules/core/FinisherUse';
 import ShadowDance from './modules/spells/ShadowDance';
 import RuptureUptime from './modules/spells/Rupture';
+import FlagellationAnalysis from './modules/spells/Flagellation';
+import { Flagellation } from 'analysis/retail/rogue/shared';
+import ShadowBlades from './modules/spells/ShadowBlades';
+import { ColdBlood } from 'analysis/retail/rogue/shared';
 
 class CombatLogParser extends CoreCombatLogParser {
   static specModules = {
@@ -58,10 +63,12 @@ class CombatLogParser extends CoreCombatLogParser {
     //Resource
     comboPointTracker: ComboPointTracker,
     comboPointDetails: ComboPointDetails,
+    comboPointGraph: ComboPointGraph,
     comboPoints: ComboPoints,
     energyTracker: EnergyTracker,
     energyCapTracker: EnergyCapTracker,
     energyDetails: EnergyDetails,
+    energyGraph: EnergyGraph,
     energy: Energy,
     spellEnergyCost: SpellEnergyCost,
     energyGraph: EnergyGraph,
@@ -77,6 +84,10 @@ class CombatLogParser extends CoreCombatLogParser {
     backstab: Backstab,
     eviscerate: Eviscerate,
     shadowDance: ShadowDance,
+    flagellationAnalysis: FlagellationAnalysis,
+    shadowBlades: ShadowBlades,
+    flagellation: Flagellation,
+    coldBlood: ColdBlood,
 
     //Casts
     symbolsOfDeathUptime: SymbolsOfDeathUptime,
@@ -94,7 +105,6 @@ class CombatLogParser extends CoreCombatLogParser {
     theRotten: TheRotten,
     deeperDaggers: DeeperDaggers,
     echoingReprimand: EchoingReprimand,
-    flagellation: Flagellation,
 
     // Covenants
 
