@@ -150,7 +150,6 @@ export default class ShadowDance extends Analyzer {
       'shadow_dance_alignment',
       { event },
       {
-
         performance: hasSymbolsActive
           ? QualitativePerformance.Perfect
           : QualitativePerformance.Fail,
