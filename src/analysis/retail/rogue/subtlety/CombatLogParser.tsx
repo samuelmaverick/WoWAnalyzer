@@ -31,7 +31,6 @@ import VanishFindWeakness from './modules/features/VanishFindWeakness';
 import TheRotten from './modules/talents/TheRotten';
 import DarkShadowContribution from './modules/talents/DarkShadow/DarkShadowContribution';
 import ShurikenStormNormalizer from './normalizers/ShurikenStormNormalizer';
-import Flagellation from 'analysis/retail/rogue/shared/talents/Flagellation';
 import Guide from './Guide';
 import Shadowstrike from './modules/spells/Shadowstrike';
 import SymbolsOfDeath from './modules/spells/SymbolsOfDeath';
@@ -71,7 +70,6 @@ class CombatLogParser extends CoreCombatLogParser {
     energyGraph: EnergyGraph,
     energy: Energy,
     spellEnergyCost: SpellEnergyCost,
-    energyGraph: EnergyGraph,
 
     //Trackers
     symbolsDamageTracker: SymbolsDamageTracker,

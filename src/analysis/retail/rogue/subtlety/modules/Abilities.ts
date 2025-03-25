@@ -72,7 +72,11 @@ class Abilities extends CoreAbilities {
         category: SPELL_CATEGORY.ROTATIONAL,
         gcd: {
           static: 1000,
-
+        },
+      },
+      {
+        spell: SPELLS.SYMBOLS_OF_DEATH.id,
+        category: SPELL_CATEGORY.ROTATIONAL,
         buffSpellId: SPELLS.SYMBOLS_OF_DEATH.id,
         cooldown: 30,
         charges: 1 + (combatant.hasTalent(TALENTS.DEATH_PERCEPTION_TALENT) ? 2 : 0),
