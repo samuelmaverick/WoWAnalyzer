@@ -25,7 +25,7 @@ import { usePlayer } from 'interface/report/context/PlayerContext';
 import { useFight } from 'interface/report/context/FightContext';
 import { LoadingStatus } from 'interface/report/Results/ResultsContext';
 import Panel from 'interface/Panel';
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import Report from 'parser/core/Report';
 import { Link } from 'react-router-dom';
 import { WCLFight } from 'parser/core/Fight';
@@ -93,7 +93,7 @@ const ResultsLoader = () => {
   });
 
   const applyPhaseFilter = useCallback(
-    (phase: string, instance: any) => {
+    (phase: string, instance: number) => {
       setSelectedPhase(phase);
       setSelectedInstance(instance);
       setTimeFilter(

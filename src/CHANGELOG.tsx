@@ -35,12 +35,28 @@ import {
   Gazh,
   Yellot,
   KYZ,
+  oneunreadmail,
+  Ceric,
+  swirl,
 } from 'CONTRIBUTORS';
 import { ItemLink } from 'interface';
 import SpellLink from 'interface/SpellLink';
 
 // prettier-ignore
 export default [
+  change(date(2025, 5, 16), <>Fix number of critical hits not being calculated.</>, swirl),
+  change(date(2025, 5, 2), 'All Gems now show on Character Doll', Ceric),
+  change(date(2025, 4, 27), 'Recommended Gems now show to the User if setup', Ceric),
+  change(date(2025, 4, 25), 'Fix Azjol-Nerub special case for Armory Link', Ceric),
+  change(date(2025, 4, 24), 'Streamlined Recommended Gems for Gem Checker', Ceric),
+  change(date(2025, 4, 22), 'Added Gems to Preparation Section with general recommendations.', [emallson,Ceric]),
+  change(date(2025, 4, 17), 'Add patch 11.1.5.', Vollmer),
+  change(date(2025, 4, 12), 'Changed Momentum talent to Exergy for Havoc', oneunreadmail),
+  change(date(2025, 3, 29), 'Update ESLint to v9.', ToppleTheNun),
+  change(date(2025, 3, 29), 'Update internal dependencies', emallson),
+  change(date(2025, 3, 28), 'Expanded new Foundation downtime section to caster and healer specs.', emallson),
+  change(date(2025, 3, 28), <>Add Empower ability handling for Cast Efficiency & Cancelled Casts modules</>, Vollmer),
+  change(date(2025, 3, 28), <>Fixed internal ordering of event listener handling</>, Seriousnes),
   change(date(2025, 3, 10), 'Added ability data for Mug\'Zee and Gallywix to the Foundation downtime section', emallson),
   change(date(2025, 3, 8), 'Add missing patch 11.1.0 details.', ToppleTheNun),
   change(date(2025, 2, 26), <>Revised Foundation downtime section for melee specs.</>, emallson),

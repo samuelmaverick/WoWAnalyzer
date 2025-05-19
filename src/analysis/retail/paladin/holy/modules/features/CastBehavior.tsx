@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import { formatPercentage } from 'common/format';
 import SPELLS from 'common/SPELLS';
 import { SpellLink } from 'interface';
@@ -17,9 +17,7 @@ class CastBehavior extends Analyzer {
 
   protected abilityTracker!: PaladinAbilityTracker;
 
-  get iolProcsPerHolyShockCrit() {
-    return 1;
-  }
+  readonly #iolProcsPerHolyShockCrit = 1;
 
   iolCastRatioChart() {
     const abilityTracker = this.abilityTracker;
@@ -39,7 +37,7 @@ class CastBehavior extends Analyzer {
     const holyShockCasts = (holyShockHeal.healingHits || 0) + (holyShockDamage.damageHits || 0);
     const holyShockCrits =
       (holyShockHeal.healingCriticalHits || 0) + (holyShockDamage.damageCriticalHits || 0);
-    const iolProcsPerHolyShockCrit = this.iolProcsPerHolyShockCrit;
+    const iolProcsPerHolyShockCrit = this.#iolProcsPerHolyShockCrit;
     const totalIolProcs = holyShockCrits * iolProcsPerHolyShockCrit;
     const unusedProcs = totalIolProcs - totalIolUsages;
 

@@ -41,9 +41,11 @@ export const ENGULF_CONSUME_FLAME = 'EngulfConsumeFlame';
 export const PYRE_MIN_TRAVEL_TIME = 950;
 export const PYRE_MAX_TRAVEL_TIME = 1_050;
 const CAST_BUFFER_MS = 100;
+const IRIDESCENCE_RED_BACKWARDS_BUFFER_MS = 500;
 const DISINTEGRATE_TICK_BUFFER = 4_000; // Haste dependant
 const JACK_APPLY_REMOVE_BUFFER = 30_000; // Realistically it will never be this long, but we hate edgecases
 const ENGULF_TRAVEL_TIME_MS = 500;
+const JACKPOT_CONSUME_FORWARD_BUFFER_MS = 300;
 
 const EVENT_LINKS: EventLink[] = [
   {
@@ -85,11 +87,12 @@ const EVENT_LINKS: EventLink[] = [
       SPELLS.PYRE_DENSE_TALENT.id,
       SPELLS.LIVING_FLAME_CAST.id,
       TALENTS.ENGULF_TALENT.id,
+      TALENTS.FIRESTORM_TALENT.id,
     ],
     referencedEventType: EventType.Cast,
     anyTarget: true,
     forwardBufferMs: CAST_BUFFER_MS,
-    backwardBufferMs: CAST_BUFFER_MS,
+    backwardBufferMs: IRIDESCENCE_RED_BACKWARDS_BUFFER_MS,
     maximumLinks: 1,
     isActive(c) {
       return c.hasTalent(TALENTS.IRIDESCENCE_TALENT);
@@ -257,7 +260,7 @@ const EVENT_LINKS: EventLink[] = [
     referencedEventType: EventType.RemoveBuff,
     anyTarget: true,
     backwardBufferMs: CAST_BUFFER_MS,
-    forwardBufferMs: CAST_BUFFER_MS,
+    forwardBufferMs: JACKPOT_CONSUME_FORWARD_BUFFER_MS,
     isActive: (C) => C.has4PieceByTier(TIERS.TWW2),
     maximumLinks: 1,
   },
@@ -347,11 +350,7 @@ export function getPyreEvents(event: CastEvent): DamageEvent[] {
   return GetRelatedEvents<DamageEvent>(event, PYRE_DRAGONRAGE);
 }
 
-function pyreHitIsUnique(
-  castEvent: CastEvent,
-  damageEvent: DamageEvent,
-  maxHitsAllowed: number = 1,
-) {
+function pyreHitIsUnique(castEvent: CastEvent, damageEvent: DamageEvent, maxHitsAllowed = 1) {
   /** Since Pyre can only hit a target once per cast
    * we need to check if it's the same target
    * Dragonrage shoots out 3 pyres so we need to count */

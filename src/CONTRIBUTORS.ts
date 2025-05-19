@@ -2622,3 +2622,96 @@ export const SamuelMaverick: Contributor = {
     },
   ],
 };
+
+export const Spruudel: Contributor = {
+  nickname: 'spruudel',
+  github: 'Spruudel',
+  discord: 'spruuudel',
+};
+
+export const oneunreadmail: Contributor = {
+  nickname: 'oneunreadmail',
+  github: 'oneunreadmail',
+  discord: 'oneunreadmail',
+};
+
+export const Ceric: Contributor = {
+  nickname: 'Ceric',
+  github: 'CericME',
+  discord: 'cericme',
+  avatar: avatar('ceric-avatar.jpg'),
+  about:
+    'Found out I could have more Gems and nothing told me about it.  Been a Developer for 20 years and have not gotten to code at work much lately so I thought "Hey Why not?" and here I am.',
+  mains: [
+    {
+      name: 'Locsul',
+      spec: SPECS.MISTWEAVER_MONK,
+      link: 'https://worldofwarcraft.blizzard.com/en-us/character/us/azjolnerub/locsul/',
+    },
+  ],
+  alts: [
+    {
+      name: 'Ceric',
+      spec: SPECS.PROTECTION_PALADIN,
+      link: 'https://worldofwarcraft.blizzard.com/en-us/character/us/azjolnerub/ceric/',
+    },
+    {
+      name: 'Eengan',
+      spec: SPECS.ELEMENTAL_SHAMAN,
+      link: 'https://worldofwarcraft.blizzard.com/en-us/character/us/azjolnerub/eengan/',
+    },
+    {
+      name: 'Sole',
+      spec: SPECS.AFFLICTION_WARLOCK,
+      link: 'https://worldofwarcraft.blizzard.com/en-us/character/us/azjolnerub/sole/',
+    },
+  ],
+};
+
+export const DarkDiver: Contributor = {
+  nickname: 'DarkDiver',
+  github: 'sandreenko',
+  discord: 'darkdiver93',
+};
+
+export const swirl: Contributor = {
+  nickname: 'swirl',
+  discord: 'lolswirl',
+  github: 'lolswirl',
+  avatar: avatar('swirl-avatar.jpg'),
+  about: 'Healer Enjoyer. Mistweaver Veteran.',
+  mains: [
+    {
+      name: 'Swirl',
+      spec: SPECS.MISTWEAVER_MONK,
+      link: 'https://worldofwarcraft.com/en-us/character/us/area-52/Swirl',
+    },
+    {
+      name: 'Devotion',
+      spec: SPECS.HOLY_PALADIN,
+      link: 'https://worldofwarcraft.com/en-us/character/us/area-52/Devotion',
+    },
+  ],
+  alts: [
+    {
+      name: 'Schizo',
+      spec: SPECS.DISCIPLINE_PRIEST,
+      link: 'https://worldofwarcraft.com/en-us/character/us/area-52/Schizo',
+    },
+    {
+      name: 'Niceorbs',
+      spec: SPECS.PRESERVATION_EVOKER,
+      link: 'https://worldofwarcraft.com/en-us/character/us/area-52/Niceorbs',
+    },
+    {
+      name: 'Efflo',
+      spec: SPECS.RESTORATION_DRUID,
+      link: 'https://worldofwarcraft.com/en-us/character/us/area-52/Efflo',
+    },
+    {
+      name: 'Tend',
+      spec: SPECS.RESTORATION_SHAMAN,
+      link: 'https://worldofwarcraft.com/en-us/character/us/area-52/Tend',
+    },
+  ],
+};
